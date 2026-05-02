@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$toptitle}</title>
+<meta name="description" content="{$description}">
+<link rel="canonical" href="{$web_url}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#0f172a">
+<meta property="og:locale" content="id_ID">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{$toptitle}">
+<meta property="og:description" content="{$description}">
+<meta property="og:url" content="{$web_url}">
+<link rel="alternate" hreflang="id-ID" href="{$web_url}">
+<link rel="alternate" hreflang="x-default" href="{$web_url}">
+
+<style>
+:root{--bg:#f6f8fb;--text:#0f172a;--muted:#64748b;--card:#fff;--line:#e5e7eb;--green:#16a34a;--orange:#f97316;--dark:#0b1220}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 28px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:28px;font-weight:900;color:var(--orange)}.logo span{color:var(--green)}
+.menu{display:flex;gap:18px;font-size:14px;font-weight:800;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:12px;background:var(--green);color:#fff;font-weight:900}
+.hero{padding:26px 0}.grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.featured{background:linear-gradient(135deg,var(--dark),#14532d);color:#fff;border-radius:24px;padding:26px;box-shadow:0 16px 34px rgba(2,8,23,.2)}
+.badge{display:inline-block;padding:7px 11px;border-radius:999px;background:#fff7ed;color:#ea580c;font-size:12px;font-weight:900}
+.featured h1{margin:16px 0 12px;font-size:clamp(30px,4.8vw,54px);line-height:1.05}
+.featured p{margin:0;color:#d1fae5;line-height:1.65}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn.alt{background:#fff;color:var(--dark)}
+.panel{display:grid;gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.league{font-size:11px;font-weight:900;color:#2563eb;text-transform:uppercase}.status{font-size:11px;font-weight:900;padding:4px 8px;border-radius:999px;color:#fff;background:#ef4444}
+.teams{display:grid;grid-template-columns:1fr 56px 1fr;gap:6px;align-items:center}.team{font-size:14px;font-weight:900}.team.r{text-align:right}.score{text-align:center;font-weight:900;color:var(--orange)}
+.meta{margin-top:8px;font-size:12px;color:var(--muted)}
+.section{padding:24px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}
+.head h2{margin:0;font-size:28px}.head p{margin:6px 0 0;color:var(--muted)}
+.news{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.ncard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ncard img{display:block;width:100%;height:150px;object-fit:cover}.body{padding:12px}.body h3{margin:0 0 8px;font-size:16px;line-height:1.35}.body p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.info{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;color:var(--muted);line-height:1.75}.info h2{margin-top:0;color:var(--text)}
+footer{margin-top:18px;background:#fff;border-top:1px solid var(--line);padding:24px 0;color:var(--muted);text-align:center;font-size:14px}
+@media(max-width:960px){.grid{grid-template-columns:1fr}.news{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.menu{display:none}.news{grid-template-columns:1fr}.featured{padding:20px}.head{display:block}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"{$keywords}",
+  "url":"{$web_url}",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"{$web_url}/search?q={query}",
+    "query-input":"required name=query"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"{$keywords}",
+  "url":"{$web_url}"
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="{$web_url}">JALA<span>LIVE</span></a>
+    <nav class="menu">
+      <a href="#live">Live</a><a href="#artikel">Artikel</a><a href="#info">Info</a>
+    </nav>
+    <a class="btn" href="/live/">Masuk Live</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="live">
+  <div class="container grid">
+    <article class="featured">
+      <span class="badge">⚽ Update Live WIB</span>
+      <h1>Live Streaming Bola & Jadwal Hari Ini Indonesia</h1>
+      <p>{$description}</p>
+      <div class="actions"><a class="btn" href="/live/">Tonton Sekarang</a><a class="btn alt" href="#artikel">Baca Prediksi</a></div>
+    </article>
+    <aside class="panel">
+      <article class="card"><div class="card-top"><span class="league">Live Match</span><span class="status">LIVE</span></div><div class="teams"><div class="team">{$home_team}</div><div class="score">{$score}</div><div class="team r">{$away_team}</div></div><div class="meta">Kick Off {$kickoff_wib} WIB · Update real-time</div></article>
+      <article class="card"><div class="card-top"><span class="league">Next Match</span><span class="status" style="background:#f59e0b">SOON</span></div><div class="teams"><div class="team">{$next_home}</div><div class="score">VS</div><div class="team r">{$next_away}</div></div><div class="meta">Kick Off {$next_kickoff_wib} WIB · Jadwal hari ini</div></article>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="artikel">
+  <div class="container">
+    <div class="head"><div><h2>Berita & Prediksi Bola Terbaru</h2><p>Konten harian untuk pencarian Google Indonesia (id-ID).</p></div><a class="btn" href="/article/">Lihat Semua</a></div>
+    <div class="news">
+      {loop type="arclist" row="8" image=1 info=1}
+      <article class="ncard">
+        <a href="{$vo.url}"><img src="{$vo.pic}" alt="{$vo.title}" width="280" height="150" loading="lazy"></a>
+        <div class="body"><h3><a href="{$vo.url}">{$vo.title}</a></h3><p>{$vo.info}...</p></div>
+      </article>
+      {/loop}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="info">
+  <div class="container">
+    <div class="info">
+      <h2>{$keywords} - Portal Bola Indonesia</h2>
+      <p><strong>{$keywords}</strong> {$description}</p>
+      <p>Halaman ini berfokus pada jadwal bola hari ini, live score, prediksi skor, dan hasil pertandingan terbaru untuk pengguna Indonesia.</p>
+      <p>Optimasi kecepatan: HTML/CSS ringan, lazy loading gambar, cache statis, dan dukungan kompresi server (gzip/brotli).</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 {$keywords}. Live streaming & jadwal bola Indonesia.</div></footer>
+</body>
+</html>
