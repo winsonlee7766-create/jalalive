@@ -59,9 +59,8 @@ footer{margin-top:14px;border-top:1px solid #1d2a45;padding:20px 0;text-align:ce
       <div class="actions"><a class="btn" href="/live/">Tonton Sekarang</a><a class="btn ghost" href="#artikel">Baca Prediksi</a></div>
     </article>
     <aside class="side" id="api-target">
-      <article class="match"><div class="topline"><span class="lg">Live Match</span><span class="st">LIVE</span></div><div class="teams"><div class="t">{$home_team}</div><div class="sc">{$score}</div><div class="t r">{$away_team}</div></div><div class="meta">Kick Off {$kickoff_wib} WIB</div></article>
-      <article class="match"><div class="topline"><span class="lg">Next Match</span><span class="st" style="background:#f59e0b">SOON</span></div><div class="teams"><div class="t">{$next_home}</div><div class="sc">VS</div><div class="t r">{$next_away}</div></div><div class="meta">Kick Off {$next_kickoff_wib} WIB</div></article>
-      <article class="match" id="api"><div class="topline"><span class="lg">Pseudo API Feed</span><span class="st" style="background:#0ea5e9">JSON</span></div><div class="api" id="api-json">{ "status":"loading" }</div><div class="meta" id="api">Simulasi feed real-time (frontend).</div></article>
+      <article class="match"><div class="topline"><span class="lg">Pseudo API Feed</span><span class="st" style="background:#0ea5e9">JSON</span></div><div class="api" id="api-json">{ "status":"loading" }</div><div class="meta">Data pertandingan hanya dari pseudo API.</div></article>
+      <div id="api-cards"></div>
     </aside>
   </div>
 </section>
@@ -81,12 +80,25 @@ footer{margin-top:14px;border-top:1px solid #1d2a45;padding:20px 0;text-align:ce
     endpoint: "/api/match/live?region=id",
     server_time_wib: "{$server_time_wib}",
     items: [
-      {league:"Liga 1",home:"Persija",away:"Persib",score:"1-0",minute:"67'"},
-      {league:"EPL",home:"Liverpool",away:"Chelsea",score:"2-2",minute:"FT"}
+      {league:"Liga 1",status:"LIVE",home:"Persija",away:"Persib",score:"1-0",minute:"67'",kickoff:"19:00"},
+      {league:"EPL",status:"FT",home:"Liverpool",away:"Chelsea",score:"2-2",minute:"FT",kickoff:"22:30"},
+      {league:"UCL",status:"SOON",home:"Real Madrid",away:"Bayern",score:"VS",minute:"-",kickoff:"02:00"}
     ]
   };
-  var el = document.getElementById('api-json');
-  if(el){ el.textContent = JSON.stringify(feed, null, 2); }
+
+  var jsonEl = document.getElementById('api-json');
+  if(jsonEl) jsonEl.textContent = JSON.stringify(feed, null, 2);
+
+  var host = document.getElementById('api-cards');
+  if(!host) return;
+
+  host.innerHTML = feed.items.map(function(m){
+    return '<article class="match">'
+      + '<div class="topline"><span class="lg">'+m.league+'</span><span class="st">'+m.status+'</span></div>'
+      + '<div class="teams"><div class="t">'+m.home+'</div><div class="sc">'+m.score+'</div><div class="t r">'+m.away+'</div></div>'
+      + '<div class="meta">Kick Off '+m.kickoff+' WIB · '+m.minute+'</div>'
+      + '</article>';
+  }).join('');
 })();
 </script>
 </body>
