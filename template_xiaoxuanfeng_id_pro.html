@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$toptitle}</title>
+<meta name="description" content="{$description}">
+<link rel="canonical" href="{$web_url}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="id_ID">
+<link rel="alternate" hreflang="id-ID" href="{$web_url}">
+<style>
+:root{--bg:#030712;--panel:#0b1224;--panel2:#121c33;--line:#263451;--txt:#e5efff;--muted:#9fb0cd;--g:#22c55e;--o:#fb923c;--c:#22d3ee}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 450px at 0% -10%,#1f2a44 0,#030712 58%),#030712;color:var(--txt);font-family:Inter,Segoe UI,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.container{width:min(1220px,calc(100% - 28px));margin:auto}
+.top{position:sticky;top:0;z-index:30;background:rgba(3,7,18,.72);backdrop-filter:blur(14px);border-bottom:1px solid #1b2740}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px}.orb{width:34px;height:34px;border-radius:50%;background:conic-gradient(from 220deg,#22c55e,#22d3ee,#fb923c,#22c55e);box-shadow:0 0 20px #22d3ee77}
+.word{font-weight:900;letter-spacing:.8px;font-size:24px;background:linear-gradient(90deg,#fff,#9ae6ff 45%,#86efac);-webkit-background-clip:text;background-clip:text;color:transparent}
+.word small{font-size:11px;display:block;letter-spacing:2.4px;color:#89a2c7;background:none;-webkit-text-fill-color:#89a2c7}
+.menu{display:flex;gap:18px;color:var(--muted);font-size:14px;font-weight:700}
+.btn{padding:10px 14px;border-radius:12px;background:linear-gradient(140deg,#16a34a,#22c55e);color:#fff;font-weight:900}
+.hero{padding:24px 0}.hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.main{position:relative;overflow:hidden;background:linear-gradient(130deg,#081126,#10351f);border:1px solid #1f2d4c;border-radius:26px;padding:28px}
+.main:after{content:"";position:absolute;right:-90px;bottom:-90px;width:260px;height:260px;background:radial-gradient(circle,#22d3ee55,transparent 65%);border-radius:50%}
+.tag{display:inline-block;background:#0d2b21;border:1px solid #1a7653;color:#8ef7bf;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:900}
+.main h1{margin:14px 0 10px;font-size:clamp(30px,5vw,58px);line-height:1.03}.main p{margin:0;color:#d7efdf;max-width:620px;line-height:1.7}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.ghost{background:transparent;border:1px solid #304367;color:#d8e4fa}
+.side{display:grid;gap:10px}.match{background:linear-gradient(150deg,#121c33,#0b1224);border:1px solid #233451;border-radius:16px;padding:14px}
+.topline{display:flex;justify-content:space-between;align-items:center}.lg{font-size:11px;font-weight:900;color:var(--c);text-transform:uppercase}.st{font-size:10px;font-weight:900;border-radius:999px;padding:4px 8px;background:#ef4444}
+.teams{margin-top:9px;display:grid;grid-template-columns:1fr 58px 1fr;align-items:center}.t{font-size:14px;font-weight:900}.r{text-align:right}.sc{text-align:center;color:#fbbf24;font-weight:900;font-size:22px}.meta{margin-top:8px;color:var(--muted);font-size:12px}
+.api{margin-top:8px;padding:8px;border-radius:10px;background:#0a1326;border:1px dashed #28406b;color:#9fb9de;font-size:11px}
+.sec{padding:22px 0}.hd{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}.hd h2{margin:0}.hd p{margin:6px 0 0;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:#0b1224;border:1px solid #1e2d49;border-radius:14px;overflow:hidden}.card img{width:100%;height:160px;object-fit:cover;display:block}.bd{padding:11px}.bd h3{margin:0 0 8px;font-size:16px}.bd p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+footer{margin-top:14px;border-top:1px solid #1d2a45;padding:20px 0;text-align:center;color:#8ea5c8}
+@media(max-width:980px){.hero-wrap{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.menu{display:none}.cards{grid-template-columns:1fr}.nav{height:62px}.main{padding:20px}.word{font-size:20px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="container nav">
+    <a href="{$web_url}" class="brand" aria-label="JalaLive Home">
+      <span class="orb"></span>
+      <span class="word">JALA.ONE<small>LIVE SPORTS ID</small></span>
+    </a>
+    <nav class="menu"><a href="#live">Live</a><a href="#artikel">Artikel</a><a href="#api">API Feed</a><a href="#info">Info</a></nav>
+    <a class="btn" href="/live/">Masuk Live</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="live">
+  <div class="container hero-wrap">
+    <article class="main">
+      <span class="tag">⚡ Ultra Fast Indonesia Sports Portal</span>
+      <h1>Jadwal, Live Score, dan Prediksi Bola Paling Cepat</h1>
+      <p>{$description}</p>
+      <div class="actions"><a class="btn" href="/live/">Tonton Sekarang</a><a class="btn ghost" href="#artikel">Baca Prediksi</a></div>
+    </article>
+    <aside class="side" id="api-target">
+      <article class="match"><div class="topline"><span class="lg">Pseudo API Feed</span><span class="st" style="background:#0ea5e9">JSON</span></div><div class="api" id="api-json">{ "status":"loading" }</div><div class="meta">Data pertandingan hanya dari pseudo API.</div></article>
+      <div id="api-cards"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="artikel"><div class="container"><div class="hd"><div><h2>Berita & Prediksi Terbaru</h2><p>Template kompatibel 小旋风, fokus user Indonesia.</p></div><a class="btn" href="/article/">Lihat Semua</a></div>
+<div class="cards">{loop type="arclist" row="8" image=1 info=1}<article class="card"><a href="{$vo.url}"><img src="{$vo.pic}" alt="{$vo.title}" width="320" height="160" loading="lazy"></a><div class="bd"><h3><a href="{$vo.url}">{$vo.title}</a></h3><p>{$vo.info}...</p></div></article>{/loop}</div>
+</div></section>
+
+<section class="sec" id="info"><div class="container"><p style="color:#9fb0cd">© 2026 {$keywords} · {$description}</p></div></section>
+</main>
+
+<footer>Powered by {$keywords} · Indonesia Market Edition</footer>
+
+<script>
+(function(){
+  var feed = {
+    endpoint: "/api/match/live?region=id",
+    server_time_wib: "{$server_time_wib}",
+    items: [
+      {league:"Liga 1",status:"LIVE",home:"Persija",away:"Persib",score:"1-0",minute:"67'",kickoff:"19:00"},
+      {league:"EPL",status:"FT",home:"Liverpool",away:"Chelsea",score:"2-2",minute:"FT",kickoff:"22:30"},
+      {league:"UCL",status:"SOON",home:"Real Madrid",away:"Bayern",score:"VS",minute:"-",kickoff:"02:00"}
+    ]
+  };
+
+  var jsonEl = document.getElementById('api-json');
+  if(jsonEl) jsonEl.textContent = JSON.stringify(feed, null, 2);
+
+  var host = document.getElementById('api-cards');
+  if(!host) return;
+
+  host.innerHTML = feed.items.map(function(m){
+    return '<article class="match">'
+      + '<div class="topline"><span class="lg">'+m.league+'</span><span class="st">'+m.status+'</span></div>'
+      + '<div class="teams"><div class="t">'+m.home+'</div><div class="sc">'+m.score+'</div><div class="t r">'+m.away+'</div></div>'
+      + '<div class="meta">Kick Off '+m.kickoff+' WIB · '+m.minute+'</div>'
+      + '</article>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
